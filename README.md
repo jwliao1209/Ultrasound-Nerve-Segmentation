@@ -18,7 +18,7 @@ python train.py\
 --device cuda:0\
 ```
 
-- model: monai_unet
+- model: monai_unet, smp_unet
 - loss: DL, GDL, DCEL, DFL
 - optim: sgd, adam, adamw
 - scheduler: step, cos
