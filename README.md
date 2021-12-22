@@ -3,6 +3,8 @@
 ## Repository structure
 ```
       .
+      ├──checkpoint
+      ├──dataset
       ├──src
       |   ├──configs.py
       |   ├──dataset.py
