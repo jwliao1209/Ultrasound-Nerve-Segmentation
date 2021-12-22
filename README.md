@@ -23,3 +23,13 @@ python train.py \
 - optim: sgd, adam, adamw
 - scheduler: step, cos
 - device: cpu or cuda:{0, 1, 2, 3}
+
+
+## Inference
+To inference the results, you can run this command:
+```
+python inference.py \
+--checkpoint <checkpoint's filename> \
+--weight <model weight's name> \
+--test_batch 32 \
+```
