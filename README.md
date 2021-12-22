@@ -27,7 +27,7 @@ python train.py \
 -bs 8 \
 -ep 100 \
 --model monai_unet \
---pretrain resnet34 \
+--pretrain resnet50 \
 --init_filter 32 \
 --depth 4 \
 --dropout 0.2 \
