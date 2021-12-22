@@ -52,5 +52,5 @@ To inference the results, you can run this command:
 python inference.py \
 --checkpoint <checkpoint's filename> \
 --weight <model weight's name> \
---test_batch 32 \
+--test_batch 32
 ```
