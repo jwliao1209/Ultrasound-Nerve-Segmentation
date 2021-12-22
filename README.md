@@ -40,8 +40,8 @@ python train.py \
 --weight_num 5
 ```
 
-- model: monai_unet, smp_unetsmp_unetpp
-- pretrain: resnet34, resnet50
+- model: monai_unet, smp_unet, smp_unetpp
+- pretrain: resnet34, resnet50, resnext50_32x4d
 - loss: DL, GDL, DCEL, DFL
 - optim: sgd, adam, adamw
 - scheduler: step, cos
