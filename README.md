@@ -38,9 +38,11 @@ python train.py \
 --scheduler cos \
 --device cuda:0 \
 --weight_num 10
+--mish: 0
 ```
 
 - model: monai_unet, smp_unet, smp_unetpp
+- msih: 0, 1
 - pretrain: resnet{34, 50}, resnext50_32x4d, efficientnet-b0, timm-resnest{14, 26, 50}d
 - loss: DL, GDL, DCEL, DFL
 - optim: sgd, adam, adamw
