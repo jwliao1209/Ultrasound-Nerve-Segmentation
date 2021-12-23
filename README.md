@@ -26,22 +26,22 @@ To train the model, you can run this command:
 python train.py \
 -bs 8 \
 -ep 100 \
---model monai_unet \
+--model smp_unet \
 --pretrain resnet50 \
 --init_filter 32 \
 --depth 4 \
 --dropout 0.2 \
---loss DL \
+--loss DFL \
 --optim adamw \
 --lr 1e-3 \
 --weight_decay 1e-4 \
---scheduler step \
+--scheduler cos \
 --device cuda:0 \
---weight_num 5
+--weight_num 10
 ```
 
 - model: monai_unet, smp_unet, smp_unetpp
-- pretrain: resnet34, resnet50, resnext50_32x4d
+- pretrain: resnet34, resnet50, resnext50_32x4d, efficientnet-b0, 
 - loss: DL, GDL, DCEL, DFL
 - optim: sgd, adam, adamw
 - scheduler: step, cos
