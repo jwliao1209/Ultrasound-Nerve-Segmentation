@@ -41,7 +41,7 @@ python train.py \
 ```
 
 - model: monai_unet, smp_unet, smp_unetpp
-- pretrain: resnet34, resnet50, resnext50_32x4d, efficientnet-b0, 
+- pretrain: resnet{34, 50}, resnext50_32x4d, efficientnet-b0, timm-resnest{14, 26, 50}d
 - loss: DL, GDL, DCEL, DFL
 - optim: sgd, adam, adamw
 - scheduler: step, cos
