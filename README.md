@@ -31,6 +31,7 @@ python train.py \
 --init_filter 32 \
 --depth 4 \
 --dropout 0.2 \
+--mish: 0
 --loss DFL \
 --optim adamw \
 --lr 1e-3 \
@@ -38,7 +39,11 @@ python train.py \
 --scheduler cos \
 --device cuda:0 \
 --weight_num 10
---mish: 0
+--fliplr <probability of random flip with left and right> \
+--flipud <probability of random flip with up and down> \
+--rot90 <probability of random rotation 90 degree> \
+--bright <probability of random adjust brightness> \
+--noise <probability of random gaussian noise with sigma=0.01>
 ```
 
 - model: monai_unet, smp_unet, smp_unetpp
