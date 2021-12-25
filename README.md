@@ -37,13 +37,15 @@ python train.py \
 --lr 1e-3 \
 --weight_decay 1e-4 \
 --scheduler cos \
+--step_size 1 \
+--gamma  0.95 \
 --device cuda:0 \
 --weight_num 10
---fliplr <probability of random flip with left and right> \
---flipud <probability of random flip with up and down> \
---rot90 <probability of random rotation 90 degree> \
---bright <probability of random adjust brightness> \
---noise <probability of random gaussian noise with sigma=0.01>
+--fliplr 0 \
+--flipud 0 \
+--rot90 0 \
+--bright 0 \
+--noise 0
 ```
 
 - model: monai_unet, smp_unet, smp_unetpp
