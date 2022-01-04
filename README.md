@@ -72,6 +72,7 @@ You can download the weight and checkpoint of our model and config on the Google
 <https://drive.google.com/drive/folders/1AlgIqtetFxAl9lOGYcZrd96YLTiMTyX2?usp=sharing>
 
 ## Data preparation
+**1. Split the train validation set**
 After downloading the dataset and put them into right place (see repo. structure above, ```train``` folder,
 ```test``` folder and ```train_masks.csv```), we first cleaning up the redundant training data by running
 ```
@@ -83,7 +84,8 @@ python split_train_valid.py
 ```
 This step will generate ```Train_X.csv``` and ```Valid_X.csv```.
 
-If you want to implement the erosion mask smoothing method, you might run the program ```python create_EMS.py ```.
+**2. Erosion Mask Smoothing**
+If you want to implement the erosion mask smoothing, you might run the program ```python create_EMS.py ```.
 Then it will create ```train_mask``` folder in dataset.
 
 We also write a code to visualize the train_mask image ```python visualize_mask.py```
