@@ -54,14 +54,15 @@ segmentation_models_pytorch==0.2.1
 
 ## Dataset
 You can download the dataset on the Kaggle or our Google Drive:
-1. Download the dataset from Kaggle
+1. Download the dataset from Kaggle  
 <https://www.kaggle.com/c/ultrasound-nerve-segmentation/data>
-2. Download the dataset from Google
+2. Download the dataset from Google  
+<https://drive.google.com/drive/folders/1-mmhwFzC-fS9hthWoyu7zdjmu9sxiUut?usp=sharing>
 
 
 ## Pre-trained weight
 You can download the weight and checkpoint of our model and config on the Google Drive:
-<https://drive.google.com/drive/folders/1FE5c0MQWQNB5wXRFlOryf95LSg7agkFf?usp=sharing>
+<https://drive.google.com/drive/folders/1AlgIqtetFxAl9lOGYcZrd96YLTiMTyX2?usp=sharing>
 
 ## Training
 To train the model, you can run this command:
