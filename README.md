@@ -35,8 +35,10 @@ https://github.com/Jia-Wei-Liao/Ultrasound_Nerve_Segmentation.git
       |   ├──trainer.py
       |   ├──RLE.py
       |   └──utils.py
+      ├──create_EMS.py
+      ├──visualize_mask.py
       ├──train.py
-      └──inference.py
+      └──inference.py      
 ```
 
 ## Requirements
@@ -51,6 +53,7 @@ torch==1.10.0
 torchvision==0.11.1
 monai==0.7.0
 segmentation_models_pytorch==0.2.1
+libtiff=0.4.2
 ```
 
 ## Dataset
@@ -78,6 +81,12 @@ python split_train_valid.py
 ```
 This step will generate ```Train_X.csv``` and ```Valid_X.csv```.
 
+If you want to implement the erosion mask smoothing method, you might run the program ```python create_EMS.py ```.
+Then it will create ```train_mask``` folder in dataset.
+
+We also write a code to visualize the train_mask image ```python visualize_mask.py```
+
+![pari_modified](https://user-images.githubusercontent.com/93210989/148057296-f0a3a34e-9207-4c82-b098-cd3b5da7b8d8.png)
 
 ## Training
 To train the model, you can run this command:
