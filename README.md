@@ -12,7 +12,16 @@ https://github.com/Jia-Wei-Liao/Ultrasound_Nerve_Segmentation.git
 ```
       .
       ├──checkpoint
+      |   └──2021-12-31-02-33-20-best
       ├──dataset
+      |   ├──train
+      |   |   ├──X_X.tif
+      |   |   └──X_X_mask.tif
+      |   ├──test
+      |   |   └──X.tif
+      |   ├──train_masks.csv
+      |   ├──Train_X.csv
+      |   └──Valid_X.csv
       ├──src
       |   ├──configs.py
       |   ├──dataset.py
@@ -38,18 +47,17 @@ pillow
 opencv-python
 torch
 torchvision
-tensorboard
-pycocotools
-detectron2
+monai
+segmentation_models_pytorch
 ```
 
 ## Dataset
 You can download the dataset on the Google Drive:
-
+<>
 
 ## Pre-trained weight
 You can download the weight and checkpoint of our model and config on the Google Drive:
-
+<https://drive.google.com/drive/folders/1FE5c0MQWQNB5wXRFlOryf95LSg7agkFf?usp=sharing>
 
 ## Training
 To train the model, you can run this command:
@@ -122,4 +130,5 @@ To reproduce our submission, please do the following steps:
 
 ## Reference
 [1] https://github.com/qubvel/segmentation_models.pytorch  
+
 [2] https://github.com/Project-MONAI/MONAI
