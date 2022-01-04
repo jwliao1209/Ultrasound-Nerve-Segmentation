@@ -83,13 +83,18 @@ python inference.py \
 
 ## Reproducing submission
 To reproduce our submission, please do the following steps:
-1. Getting the code
-2. Install the package
-3. Download the dataset
-4. Download the weight of model
-5. Inference
+1. [Getting the code](https://github.com/Jia-Wei-Liao/Ultrasound_Nerve_Segmentation/#Getting-the-code)
+2. [Install the package](https://github.com/Jia-Wei-Liao/Ultrasound_Nerve_Segmentation/#requirements)
+3. [Download the dataset](https://github.com/Jia-Wei-Liao/Ultrasound_Nerve_Segmentation/#dataset)
+4. [Download the weight of model](https://github.com/Jia-Wei-Liao/Ultrasound_Nerve_Segmentation/#pre-trained-weight)
+5. [Inference](https://github.com/Jia-Wei-Liao/Ultrasound_Nerve_Segmentation/#Inference)
 
 ## Experiments
+| method       | backbone        | private score |
+| ------------ | --------------- | ------------- |
+| UNet         | ResNet50        | 0.69587       |
+| UNet         | EﬀicientNet-b1  | 0.71954       |
+| DeepLabv3+   | EﬀicientNet-b0  | 0.69328       |
 
 ## Citation
 ```
