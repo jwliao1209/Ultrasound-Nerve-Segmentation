@@ -26,27 +26,23 @@ To train the model, you can run this command:
 python train.py \
 -bs 8 \
 -ep 100 \
---dataset 1 \
+--dataset 2 \
 --model smp_unet \
---pretrain resnet50 \
---init_filter 32 \
---depth 4 \
---dropout 0.2 \
---mish: 0 \
+--pretrain efficientnet-b1 \
+--activation RELU \
 --loss DFL \
 --optim adamw \
---lr 1e-3 \
+--lr 5E-4 \
 --weight_decay 1e-4 \
 --scheduler cos \
 --step_size 1 \
 --gamma  0.95 \
 --device cuda:0 \
 --weight_num 10 \
---fliplr 0 \
---flipud 0 \
---rot90 0 \
---bright 0 \
---noise 0
+--fliplr 0.5 \
+--flipud 0.25 \
+--bright 0.1 \
+--noise 0.1
 ```
 
 --dataset: 1, 2, 3, 4, 5
@@ -63,7 +59,7 @@ python train.py \
 To inference the results, you can run this command:
 ```
 python inference.py \
+--adaptive <use adaptive ensemble>
 --checkpoint <checkpoint's filename> \
---weight <model weight's name> \
---test_batch 32
+--ensem_num <number of ensemble weight> \
 ```
