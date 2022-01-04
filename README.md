@@ -22,6 +22,7 @@ https://github.com/Jia-Wei-Liao/Ultrasound_Nerve_Segmentation.git
       |   ├──test
       |   |   └──X.tif
       |   ├──train_masks.csv
+      |   ├──clean_masks.csv
       |   ├──Train_X.csv
       |   └──Valid_X.csv
       ├──src
@@ -64,6 +65,19 @@ You can download the dataset on the Kaggle or our Google Drive:
 ## Pre-trained weight
 You can download the weight and checkpoint of our model and config on the Google Drive:
 <https://drive.google.com/drive/folders/1AlgIqtetFxAl9lOGYcZrd96YLTiMTyX2?usp=sharing>
+
+## Data preparation
+After downloading the dataset and put them into right place (see repo. structure above, ```train``` folder,
+```test``` folder and ```train_masks.csv```), we first cleaning up the redundant training data by running
+```
+python clean_dataset.py
+```
+This step will generate ```clean_masks.csv```, then we can split training and validation dataset by running
+```
+python split_train_valid.py
+```
+This step will generate ```Train_X.csv``` and ```Valid_X.csv```.
+
 
 ## Training
 To train the model, you can run this command:
