@@ -4,6 +4,8 @@
 We join this task on [Kaggle [1]](https://github.com/Jia-Wei-Liao/Ultrasound_Nerve_Segmentation/#Reference). Surgery inevitably brings discomfort, and oftentimes involves significant post-surgical pain. In the past, the way to decrease the pain is to inject an anesthetic but bring a bevy of unwanted side effects. This competition's sponsor committed to improving pain management through the use of indwelling catheters that block or mitigate pain at the source. Pain management catheters reduce dependence on narcotics and speed up patient recovery. It is a critical step in finding the exact location 
 so can assist to install the device. The task in this competition is to segment a collection of nerves called the Brachial Plexus (BP) in ultrasound images. We are dealing with ultrasound images dataset which contained 5635 training images with 2323 BP and 5508 test images.
 
+![example](https://user-images.githubusercontent.com/93210989/148060792-3c1db347-6c8e-4b84-9ede-e66af46bcb33.png)
+
 ## Getting the code
 You can download all the files in this repository by cloning this repository:
 ```
@@ -85,8 +87,8 @@ If you want to implement the erosion mask smoothing method, you might run the pr
 Then it will create ```train_mask``` folder in dataset.
 
 We also write a code to visualize the train_mask image ```python visualize_mask.py```
-
-![pari_modified](https://user-images.githubusercontent.com/93210989/148057296-f0a3a34e-9207-4c82-b098-cd3b5da7b8d8.png)
+![pair](https://user-images.githubusercontent.com/93210989/148060524-f519f404-7065-4e3b-a7c2-c2549c833422.png)
+<!-- ![pari_modified](https://user-images.githubusercontent.com/93210989/148057296-f0a3a34e-9207-4c82-b098-cd3b5da7b8d8.png) -->
 
 ## Training
 To train the model, you can run this command:
