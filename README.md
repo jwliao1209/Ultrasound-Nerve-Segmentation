@@ -53,8 +53,11 @@ segmentation_models_pytorch==0.2.1
 ```
 
 ## Dataset
-You can download the dataset on the Google Drive:
-<>
+You can download the dataset on the Kaggle or our Google Drive:
+1. Download the dataset from Kaggle
+<https://www.kaggle.com/c/ultrasound-nerve-segmentation/data>
+2. Download the dataset from Google
+
 
 ## Pre-trained weight
 You can download the weight and checkpoint of our model and config on the Google Drive:
@@ -130,6 +133,8 @@ To reproduce our submission, please do the following steps:
 ```
 
 ## Reference
-[1] https://github.com/qubvel/segmentation_models.pytorch  
+[1] https://www.kaggle.com/c/ultrasound-nerve-segmentation  
 
-[2] https://github.com/Project-MONAI/MONAI
+[2] https://github.com/qubvel/segmentation_models.pytorch  
+
+[3] https://github.com/Project-MONAI/MONAI
