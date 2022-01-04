@@ -114,7 +114,7 @@ To reproduce our submission, please do the following steps:
 ```
 @misc{
     title = {nuclear_dataset_segmentation},
-    author = {Jia-Wei Liao},
+    author = {Jia-Wei Liao, Kuok-Tong Ng, Yi-Cheng Hung},
     url = {https://github.com/Jia-Wei-Liao/Ultrasound_Nerve_Segmentation},
     year = {2022}
 }
