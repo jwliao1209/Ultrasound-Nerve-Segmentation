@@ -121,6 +121,6 @@ To reproduce our submission, please do the following steps:
 ## Reference
 [1] Kaggle: https://www.kaggle.com/c/ultrasound-nerve-segmentation  
 
-[2] Segmentation Models: https://github.com/qubvel/segmentation_models.pytorch  
+[2] MONAI: https://github.com/Project-MONAI/MONAI  
 
-[3] MONAI: https://github.com/Project-MONAI/MONAI
+[3] Segmentation Models: https://github.com/qubvel/segmentation_models.pytorch  
