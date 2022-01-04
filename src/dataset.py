@@ -9,7 +9,7 @@ from src.transforms import *
 
 
 def get_image_name(path):
-    return int(path.split('/')[-1][:-4])
+    return int(path.split(os.sep)[-1][:-4])
 
 
 class BPDataset(Dataset):
