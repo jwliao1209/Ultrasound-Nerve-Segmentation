@@ -68,35 +68,19 @@ You can download the weight and checkpoint of our model and config on the Google
 To train the model, you can run this command:
 ```
 python train.py \
--bs 8 \
--ep 100 \
---dataset 2 \
---model smp_unet \
---pretrain efficientnet-b1 \
---activation RELU \
---loss DFL \
---optim adamw \
---lr 5E-4 \
---weight_decay 1e-4 \
---scheduler cos \
---step_size 1 \
---gamma  0.95 \
---device cuda:0 \
---weight_num 10 \
---fliplr 0.5 \
---flipud 0.25 \
---bright 0.1 \
---noise 0.1
+-bs <batch size of training step> \
+-ep <epochs of training step> \
+--weight_num <number of save weight> \
 ```
 
---dataset: 1, 2, 3, 4, 5
-- model: monai_unet, smp_unet, smp_unetpp
-- msih: 0, 1
-- pretrain: resnet{34, 50}, resnext50_32x4d, efficientnet-b0, timm-resnest{14, 26, 50}d
+- dataset: 1, 2, 3, 4, 5
+- model: smp_unet, smp_unetpp, deeplabv3pp
+- pretrain: resnet{34, 50}, resnext50_32x4d, efficientnet-b{0, 1, 2}, timm-resnest{14, 26, 50}d
+- activation: RELU, LeakyReLU, SiLU, Mish
 - loss: DL, GDL, DCEL, DFL
 - optim: sgd, adam, adamw
 - scheduler: step, cos
-- device: cpu or cuda:{0, 1, 2, 3}
+- device: cpu or cuda:0
 
 
 ## Inference
