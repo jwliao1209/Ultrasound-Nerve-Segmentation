@@ -92,6 +92,7 @@ python inference.py \
 --checkpoint <checkpoint's filename> \
 --ensem_num <number of ensemble weight> \
 ```
+This step will output a csv file, which can be found in ```checkpoint/{checkpoint you have used}/answer.csv```
 
 ## Reproducing submission
 To reproduce our submission, please do the following steps:
