@@ -100,5 +100,5 @@ To reproduce our submission, please do the following steps:
 }
 
 ## Reference
-[1] https://github.com/qubvel/segmentation_models.pytorch
+[1] https://github.com/qubvel/segmentation_models.pytorch  
 [2] https://github.com/Project-MONAI/MONAI
