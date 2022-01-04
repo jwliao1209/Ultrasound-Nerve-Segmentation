@@ -1,8 +1,6 @@
 # Ultrasound_Nerve_Segmentation
 
 ## Introduction of ultrasound nerve dataset
-Surgery inevitably brings discomfort, and oftentimes involves significant post-surgical pain. In the past, the way to decrease the pain is to inject an anesthetic but bring a bevy of unwanted side effects. This competition's sponsor committed to improving pain management through the use of indwelling catheters that block or mitigate pain at the source. Pain management catheters reduce dependence on narcotics and speed up patient recovery. It is a critical step in finding the exact location 
-so can assist to install the device. The task in this competition is to segment a collection of nerves called the Brachial Plexus (BP) in ultrasound images. We are dealing with ultrasound images dataset which contained 5635 training images with 2323 BP and 5508 test images.
 
 ## Getting the code
 You can download all the files in this repository by cloning this repository:
@@ -40,17 +38,16 @@ https://github.com/Jia-Wei-Liao/Ultrasound_Nerve_Segmentation.git
 
 ## Requirements
 ```
-tqdm
-numpy
-pandas
-matplotlib
-PIL
-pillow
-opencv-python
-torch
-torchvision
-monai
-segmentation_models_pytorch
+tqdm==4.55.1
+numpy==1.18.5
+pandas==1.2.0
+matplotlib==3.3.2
+pillow==8.1.0
+opencv-python==4.5.4.58
+torch==1.10.0
+torchvision==0.11.1
+monai==0.7.0
+segmentation_models_pytorch==0.2.1
 ```
 
 ## Dataset
