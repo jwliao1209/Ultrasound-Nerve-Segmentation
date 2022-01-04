@@ -92,12 +92,14 @@ To reproduce our submission, please do the following steps:
 ## Experiments
 
 ## Citation
+```
 @misc{
     title = {nuclear_dataset_segmentation},
     author = {Jia-Wei Liao},
     url = {https://github.com/Jia-Wei-Liao/Ultrasound_Nerve_Segmentation},
     year = {2022}
 }
+```
 
 ## Reference
 [1] https://github.com/qubvel/segmentation_models.pytorch  
