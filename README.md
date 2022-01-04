@@ -1,5 +1,13 @@
 # Ultrasound_Nerve_Segmentation
 
+## Introduction of ultrasound nerve dataset
+
+## Getting the code
+You can download all the files in this repository by cloning this repository:
+```
+https://github.com/Jia-Wei-Liao/Ultrasound_Nerve_Segmentation.git
+```
+
 ## Repository structure
 ```
       .
@@ -18,6 +26,15 @@
       ├──train.py
       └──inference.py
 ```
+
+## Dataset
+You can download the dataset on the Google Drive:
+
+
+## Pre-trained weight
+You can download the weight and checkpoint of our model and config on the Google Drive:
+
+
 
 
 ## Training
@@ -63,3 +80,25 @@ python inference.py \
 --checkpoint <checkpoint's filename> \
 --ensem_num <number of ensemble weight> \
 ```
+
+## Reproducing submission
+To reproduce our submission, please do the following steps:
+1. Getting the code
+2. Install the package
+3. Download the dataset
+4. Download the weight of model
+5. Inference
+
+## Experiments
+
+## Citation
+@misc{
+    title = {nuclear_dataset_segmentation},
+    author = {Jia-Wei Liao},
+    url = {https://github.com/Jia-Wei-Liao/Ultrasound_Nerve_Segmentation},
+    year = {2022}
+}
+
+## Reference
+[1] https://github.com/qubvel/segmentation_models.pytorch
+[2] https://github.com/Project-MONAI/MONAI
