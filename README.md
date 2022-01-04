@@ -27,14 +27,28 @@ https://github.com/Jia-Wei-Liao/Ultrasound_Nerve_Segmentation.git
       └──inference.py
 ```
 
+## Requirements
+```
+tqdm
+numpy
+pandas
+matplotlib
+PIL
+pillow
+opencv-python
+torch
+torchvision
+tensorboard
+pycocotools
+detectron2
+```
+
 ## Dataset
 You can download the dataset on the Google Drive:
 
 
 ## Pre-trained weight
 You can download the weight and checkpoint of our model and config on the Google Drive:
-
-
 
 
 ## Training
