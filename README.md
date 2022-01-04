@@ -102,7 +102,7 @@ python train.py \
 - dataset: 1, 2, 3, 4, 5
 - model: smp_unet, smp_unetpp, deeplabv3pp
 - pretrain: resnet{34, 50}, resnext50_32x4d, efficientnet-b{0, 1, 2}, timm-resnest{14, 26, 50}d
-- activation: RELU, LeakyReLU, SiLU, Mish
+- activation: RELU, LRELU, SILU, MISH
 - loss: DL, GDL, DCEL, DFL
 - optim: sgd, adam, adamw
 - scheduler: step, cos
