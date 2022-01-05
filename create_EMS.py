@@ -9,9 +9,10 @@ import numpy as np
 
 def MSK(image, erosion):
     interior = erosion
-    interior[interior != 0] = 243
+    interior[interior != 0] = 255
     boundary = image - interior
-    boundary[boundary != 0] = 243
+    boundary[boundary != 0] = 255
+    interior[interior != 0] =243
     new_Mask = interior + boundary
 
     return new_Mask
