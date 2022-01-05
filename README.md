@@ -132,9 +132,7 @@ To reproduce our submission, please do the following steps:
 ## Experiments
 | method       | backbone        | private score |
 | ------------ | --------------- | ------------- |
-| UNet         | ResNet50        | 0.69587       |
-| UNet         | EﬀicientNet-b1  | 0.71954       |
-| DeepLabv3+   | EﬀicientNet-b0  | 0.69328       |
+| UNet         | EﬀicientNet-b1  | 0.72341       |
 
 ## Citation
 ```
