@@ -89,8 +89,8 @@ If you want to implement the erosion mask smoothing, you might run the program `
 Then it will create ```train_mask``` folder in dataset.
 
 We also write a code to visualize the train_mask image ```python visualize_mask.py```
-![pair](https://user-images.githubusercontent.com/93210989/148060524-f519f404-7065-4e3b-a7c2-c2549c833422.png)
-<!-- ![pari_modified](https://user-images.githubusercontent.com/93210989/148057296-f0a3a34e-9207-4c82-b098-cd3b5da7b8d8.png) -->
+![pair](https://user-images.githubusercontent.com/93210989/148061341-555ef08f-35e5-4774-b236-7ddd5208cd74.png)
+
 
 ## Training
 To train the model, you can run this command:
