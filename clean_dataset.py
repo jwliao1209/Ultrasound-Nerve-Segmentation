@@ -8,6 +8,7 @@ import numpy as np
 import src.RLE as RLE
 from src.utils import ReadCSV
 
+
 class TrainMask(object):
     def __init__(self, subject, img, pixels):
         self.img = int(img)
@@ -22,6 +23,7 @@ class TrainMask(object):
 
     def to_csv_list(self):
         return [str(self.subject), str(self.img), self.pixels]
+
 
 def WriteCSV(path, DATA):
     with open(path, 'w', newline='') as foldfile:
@@ -44,9 +46,9 @@ if __name__ == '__main__':
     SUBJECT, IMG, PIXELS = ReadCSV(csvPath)
 
     # Initialize some variables
-    pos = defaultdict(lambda : [])
-    neg = defaultdict(lambda : [])
-    subject = defaultdict(lambda : [])
+    pos = defaultdict(lambda: [])
+    neg = defaultdict(lambda: [])
+    subject = defaultdict(lambda: [])
 
     # collect all subject and image ID, store as dict(subID->list[imgID])
     for i in range(len(IMG)):
@@ -54,7 +56,7 @@ if __name__ == '__main__':
         imgID = IMG[i]
         subID = SUBJECT[i]
         subject[subID].append(TrainMask(subID, imgID, pix))
-    
+
     # dividing into positive and negative parts (wheter label is empty or not)
     for subID, maskList in subject.items():
         for mask in maskList:
@@ -62,7 +64,7 @@ if __name__ == '__main__':
                 neg[subID].append(mask)
             else:
                 pos[subID].append(mask)
-                
+
     # remove False negative from the dataset
     for subID, maskList in neg.items():
         print(f"Processing subjectID: {subID}")
@@ -80,7 +82,7 @@ if __name__ == '__main__':
             imgpath = os.path.join(trainPath, f"{subID}_{mask.img}.tif")
             img = cv2.imread(imgpath, cv2.IMREAD_GRAYSCALE)
             comp = posImgs == img
-            
+
             for i, j in enumerate(comp):
                 if j.all():
                     print(pos[subID][i].img, mask.img)
@@ -96,6 +98,6 @@ if __name__ == '__main__':
     for subID, maskList in subject.items():
         for mask in maskList:
             content.append(mask)
-        
+
     WriteCSV(path=os.path.join('dataset', 'clean_masks.csv'),
              DATA=content)

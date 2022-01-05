@@ -1,11 +1,9 @@
 import os
 import csv
+import random
+import argparse
 from collections import defaultdict
 
-import cv2
-import numpy as np
-
-import src.RLE as RLE
 from src.utils import ReadCSV
 
 
@@ -17,9 +15,6 @@ class TrainMask(object):
 
     def empty_label(self):
         return not len(self.pixels)
-
-    def __lt__(self, other):
-        return self.img < other.img
 
     def to_csv_list(self):
         return [str(self.subject), str(self.img), self.pixels]
@@ -36,68 +31,64 @@ def WriteCSV(path, DATA):
 
 if __name__ == '__main__':
     '''
-    The goal of this script is construct a csv file by
-    1. inherit from "train_masks.csv"
-    2. clean up false negative data (remove some rows from step 1)
+    The goal of this script is to split 'dataset/clean_masks.csv' into training
+    and validation dataset.
+
+    However, there are many empty mask in our training data
+    (empty:nonempty is around 3:2)
+
+    Our goal is as follows:
+        1. Split 8:2 into Train/Valid from nonempty dataset.
+        2. Random sample the same amount of "8" to Train from empty dataset.
+        3. The remaining is to to Validation dataset.
+    Therefore, we keep 1:1 (empty:non-empty) ratio in our dataset.
     '''
-    # set up the path and load the content from "train_masks.csv"
-    trainPath = os.path.join('dataset', 'train')
-    csvPath = os.path.join('dataset', 'train_masks.csv')
-    SUBJECT, IMG, PIXELS = ReadCSV(csvPath)
+    parser = argparse.ArgumentParser()
 
-    # Initialize some variables
-    pos = defaultdict(lambda: [])
-    neg = defaultdict(lambda: [])
-    subject = defaultdict(lambda: [])
+    parser.add_argument('-loc', '--datasetLoc', type=str, default='dataset',
+                        help='dataset location, must contain clean_masks.csv')
+    parser.add_argument('-tr', '--TrainRatio', type=float, default=0.8,
+                        help='the ratio of Train:Valid')
+    parser.add_argument('-n', '--n', type=int, default=5,
+                        help='the number of times of bagging')
+    args = parser.parse_args()
 
-    # collect all subject and image ID, store as dict(subID->list[imgID])
-    for i in range(len(IMG)):
-        pix = PIXELS[i]
-        imgID = IMG[i]
-        subID = SUBJECT[i]
-        subject[subID].append(TrainMask(subID, imgID, pix))
+    # Read 'train_masks.csv'
+    path = os.path.join(args.datasetLoc, 'train_masks.csv')
+    SUBJECT, IMG, PIXELS = ReadCSV(path=path)
 
-    # dividing into positive and negative parts (wheter label is empty or not)
-    for subID, maskList in subject.items():
-        for mask in maskList:
-            if mask.empty_label():
-                neg[subID].append(mask)
-            else:
-                pos[subID].append(mask)
+    # split it into empty and non-empty
+    posID, negID = [], []
+    for i, pix in enumerate(PIXELS):
+        if len(pix):
+            posID.append(i)
+        else:
+            negID.append(i)
 
-    # remove False negative from the dataset
-    for subID, maskList in neg.items():
-        print(f"Processing subjectID: {subID}")
+    # split it into n folds
+    for i in range(1, args.n+1):
+        # shuffle index
+        random.shuffle(posID)
+        random.shuffle(negID)
 
-        # Read all positive images for that subject ID
-        posImgs = []
-        for mask in pos[subID]:
-            imgpath = os.path.join(trainPath, f"{subID}_{mask.img}.tif")
-            img = cv2.imread(imgpath, cv2.IMREAD_GRAYSCALE)
-            posImgs.append(img)
-        posImgs = np.array(posImgs)
+        # split dataset
+        NumTrain = int(args.TrainRatio * len(posID))
+        NumValid = len(posID) - NumTrain
+        TrainID = posID[:NumTrain] + negID[:NumTrain]
+        ValidID = posID[NumTrain:] + negID[NumTrain:NumTrain+NumValid]
 
-        # Check whether exist identical images
-        for mask in maskList:
-            imgpath = os.path.join(trainPath, f"{subID}_{mask.img}.tif")
-            img = cv2.imread(imgpath, cv2.IMREAD_GRAYSCALE)
-            comp = posImgs == img
+        # shuffle
+        random.shuffle(TrainID)
+        random.shuffle(ValidID)
 
-            for i, j in enumerate(comp):
-                if j.all():
-                    print(pos[subID][i].img, mask.img)
-                    neg[subID].remove(mask)
-                    break
+        # generate csv content
+        Train, Valid = [], []
+        for tid in TrainID:
+            Train.append(TrainMask(SUBJECT[tid], IMG[tid], PIXELS[tid]))
+        for vid in ValidID:
+            Valid.append(TrainMask(SUBJECT[vid], IMG[vid], PIXELS[vid]))
 
-    # dump everything to a new csv file
-    for subID in subject.keys():
-        subject[subID] = pos[subID] + neg[subID]
-        subject[subID] = sorted(subject[subID])
-
-    content = []
-    for subID, maskList in subject.items():
-        for mask in maskList:
-            content.append(mask)
-
-    WriteCSV(path=os.path.join('dataset', 'clean_masks.csv'),
-             DATA=content)
+        WriteCSV(path=os.path.join(args.datasetLoc, f'Train_{i}.csv'),
+                 DATA=Train)
+        WriteCSV(path=os.path.join(args.datasetLoc, f'Valid_{i}.csv'),
+                 DATA=Valid)
