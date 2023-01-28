@@ -1,4 +1,4 @@
-# Ultrasound_Nerve_Segmentation
+# Ultrasound Nerve Segmentation
 
 ## Introduction of ultrasound nerve dataset
 We join this task on [Kaggle [1]](https://github.com/Jia-Wei-Liao/Ultrasound_Nerve_Segmentation/#Reference). Surgery inevitably brings discomfort, and oftentimes involves significant post-surgical pain. In the past, the way to decrease the pain is to inject an anesthetic but bring a bevy of unwanted side effects. This competition's sponsor committed to improving pain management through the use of indwelling catheters that block or mitigate pain at the source. Pain management catheters reduce dependence on narcotics and speed up patient recovery. It is a critical step in finding the exact location 
